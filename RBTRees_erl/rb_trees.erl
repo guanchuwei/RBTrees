@@ -1,5 +1,5 @@
 %%%-------------------------------------------------------------------
-%%% @author Administrator
+%%% @author ChuWei
 %%% @copyright (C) 2021, <COMPANY>
 %%% @doc
 %%%
@@ -17,7 +17,6 @@
     , build_tree/0
     , insert/3
     , lookup/2
-%%    , insert_test/3
     , right_rotate/1
     , empty/0
     , test_gb/1
@@ -121,30 +120,6 @@ build_tree() ->
     P = #rb_node{key = 5, val = 5, right = Pr, left = Pl},
     P.
 
-%%%% 插入操作
-%%%% 根节点
-%%insert_test(K, V, Trees = #rb_node{key = null}) ->
-%%    Trees#rb_node{key = K, val = V};
-%%%% 左子树
-%%insert_test(K, V, Trees = #rb_node{key = Key, left = Left}) when K < Key ->
-%%    case Left of
-%%        #rb_node{} ->
-%%            T = #rb_node{} = insert_test(K, V, Left),
-%%            Trees#rb_node{left = T};
-%%        _ ->
-%%            Trees#rb_node{left = #rb_node{key = K, val = V}}
-%%    end;
-%%%% 右子树
-%%insert_test(K, V, Trees = #rb_node{key = Key, right = Right}) when K > Key ->
-%%    case Right of
-%%        #rb_node{} ->
-%%            T = #rb_node{} = insert_test(K, V, Right),
-%%            Trees#rb_node{right = T};
-%%        _ -> Trees#rb_node{right = #rb_node{key = K, val = V}}
-%%    end;
-%%%% 相同key值
-%%insert_test(_K, V, Trees = #rb_node{}) ->
-%%    Trees#rb_node{val = V}.
 
 
 insert(K, V, Root = #rb_node{}) ->
